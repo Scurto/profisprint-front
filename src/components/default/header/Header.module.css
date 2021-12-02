@@ -1,0 +1,28 @@
+.header {
+    display: block;
+    grid-area: header;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.header li {
+    float: left;
+}
+
+.header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.header li a:hover {
+    background-color: #111111;
+}

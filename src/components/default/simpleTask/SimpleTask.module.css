@@ -1,0 +1,24 @@
+.resultBlock {
+    display: flex;
+}
+
+.resultTextarea {
+    width: 850px;
+    height: 600px;
+}
+
+.fieldBlock {
+    display: flex;
+}
+
+.fieldBlockMargin {
+    margin-left: 10px;
+}
+
+.videoBlock {
+    margin-left: auto;
+}
+
+.fieldTitle {
+    margin: 0;
+}

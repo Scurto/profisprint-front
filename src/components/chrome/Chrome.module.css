@@ -1,0 +1,5 @@
+.chrome {
+    background-color: blue;
+    display: block;
+    grid-area: content;
+}
