@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from "react-router-dom";
 import logo from './logo.svg';
+
 import './App.css';
 import HeaderContainer from "./components/default/header/HeaderContainer";
 import OperaContainer from "./components/opera/OperaContainer";
