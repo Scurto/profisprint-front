@@ -484,7 +484,7 @@ async function processTaskFunction1Strategy(dispatch, simpleTaskPage) {
 
     taskAPI.processTask(processData).then(resp => {
         dispatch(addToFinalResultTextareaCreator('\n' + '-----DONE-----'));
-        // new Audio(audioFile).play();
+        new Audio(audioFile).play();
     })
 }
 

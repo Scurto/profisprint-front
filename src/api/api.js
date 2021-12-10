@@ -24,6 +24,9 @@ export const taskAPI = {
     },
     getGclid() {
         return axios.get(baseUrl + "/gclid", { params: {} });
+    },
+    getTasksForProcess() {
+        return axios.get(baseUrl + "/simpleTaskReady", { params: {} });
     }
 
 

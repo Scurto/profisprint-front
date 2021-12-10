@@ -1,17 +1,11 @@
-.chrome {
-    background-color: blue;
+.test {
     display: block;
-    grid-area: content;
-}
-
-.overflow {
-    height: 700px;
-    overflow: scroll;
+    width:100vw;
 }
 
 .divTable {
     display: table;
-    width:98vw;
+    width:100vw;
     background-color: #eee;
     border: 1px solid #666666;
     border-spacing: 5px; /* cellspacing:poor IE support for  this */

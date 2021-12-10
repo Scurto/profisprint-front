@@ -1,31 +1,59 @@
 import React from 'react';
 import css from './UtilTask.module.css';
+import ReadyTasksItem from "./readyTasksItem/ReadyTasksItem";
 
-const UtilTask = (props) => {
+class UtilTask extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
 
-    let clickTest = () => {
-        // let text = newPostRef.current.value;
-        // props.dispatch(addPostCreator());
-        // props.addPost()
+    render() {
+        console.log(this.props);
 
-        console.log('test');
-        props.testClick();
-    };
+        let state = this.props.utilTaskPage;
 
-    return (
-        <div className={css.chrome}>
-            <h1>Main article area</h1>
-            <p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go
-                to a two column layout, and then to a three column layout by redefining the grid, and the placement
-                of items on the grid.</p>
+        let readyTasksList = state.readyTasksData.map(value => {
+            return <ReadyTasksItem taskId={value.taskId}
+                                   date={value.date}
+                                   channelId={value.channelId}
+                                   customerId={value.customerId}
+                                   domainUrl={value.domainUrl}
+                                   relatedTask={this.props.relatedTask}
+            />;
+        });
 
-            <div>
-                <button onClick={clickTest}>Add post</button>
+        return <div>
+            <div className={css.overflow}>
+                <div className={css.divTable}>
+                    <div className={css.divTableRow}>
+                        <div className={css.divTableCol200} align="center">Task ID</div>
+                        <div className={css.divTableCol200} align="center">Date</div>
+                        <div className={css.divTableCol} align="center">Channel ID</div>
+                        <div className={css.divTableCol200} align="center">Customer ID</div>
+                        <div className={css.divTableUrlCol} align="center">Domain URL</div>
+                    </div>
+                    {readyTasksList}
+                    {/*{state.readyTasksData.map(value => {*/}
+                    {/*    return <div>*/}
+                    {/*        <div className={css.divTableUrlCol} align="center">{value.domainUrl}</div>*/}
+                    {/*        <button onClick={() => {props.relatedTask(value)}}>RelatedTask</button>*/}
+                    {/*    </div>*/}
+                    {/*})}*/}
+                </div>
+            </div>
+            RELATED TASKS
+            <div className={css.divTable}>
+                <div className={css.divTableRow}>
+                    <div className={css.divTableCol200} align="center">Task ID</div>
+                    <div className={css.divTableCol200} align="center">Date</div>
+                    <div className={css.divTableCol} align="center">Channel ID</div>
+                    <div className={css.divTableCol200} align="center">Customer ID</div>
+                    <div className={css.divTableUrlCol} align="center">Domain URL</div>
+                </div>
             </div>
         </div>
-
-    );
-};
+    }
+}
 
 export default UtilTask;

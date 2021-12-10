@@ -2,14 +2,20 @@ import React from "react";
 import UtilTask from "./UtilTask";
 import * as axios from "axios";
 import {connect} from "react-redux";
-import {testClickCreator} from "../../../redux/utilTaskReducer";
+import {relatedTask, testClickCreator, updateReadyTasksDataCreator} from "../../../redux/utilTaskReducer";
+import {taskAPI} from "../../../api/api";
+import {setDataByTaskId} from "../../../redux/simpleTaskReducer";
 
 class UtilTaskContainer extends React.Component {
 
     componentDidMount() {
-        // axios.get(`http://localhost:8830/test`).then(resp => {
-        //     console.log(resp.data);
-        // })
+        taskAPI.getTasksForProcess().then(resp => {
+            this.props.updateReadyTasksDataCreator(resp.data);
+        })
+    }
+
+    constructor(props) {
+        super(props);
     }
 
     render() {
@@ -19,16 +25,8 @@ class UtilTaskContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        utilTaskPage: state.utilTaskPage
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        testClick: () => {
-            dispatch(testClickCreator());
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UtilTaskContainer);
+export default connect(mapStateToProps, {updateReadyTasksDataCreator, relatedTask})(UtilTaskContainer);
