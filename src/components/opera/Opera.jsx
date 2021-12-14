@@ -1,28 +1,24 @@
 import React from 'react';
 import css from './Opera.module.css';
+import {useLocation, useParams} from "react-router";
 import {Link, NavLink} from "react-router-dom";
+import OperaMainPanel from "./main/OperaMainPanel";
+import OperaBottomPanel from "./bottom/OperaBottomPanel";
 
-const Opera = (props) => {
-    return (
-        <div className={css.opera}>
-            <h1>Main article area</h1>
-            <p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go
-                to a two column layout, and then to a three column layout by redefining the grid, and the placement
-                of items on the grid.</p>
+class Opera extends React.Component {
 
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/opera">Opera </Link>
-                </li>
-                <li>
-                    <Link to="/chrome">Chrome</Link>
-                </li>
-            </ul>
-        </div>
-    );
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return <div>
+            {/*<h1>Hello, {this.props.operaPage.testText}</h1>*/}
+            <OperaMainPanel></OperaMainPanel>
+            {/*<OperaBottomPanel></OperaBottomPanel>*/}
+        </div>;
+    }
+
 };
 
 export default Opera;

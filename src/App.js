@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from "react-router-dom";
+import {Redirect, Route} from "react-router-dom";
 import logo from './logo.svg';
 
 import './App.css';
@@ -8,20 +8,25 @@ import OperaContainer from "./components/opera/OperaContainer";
 import ChromeContainer from "./components/chrome/ChromeContainer";
 import SimpleTaskContainer from "./components/default/simpleTask/SimpleTaskContainer";
 import UtilTaskContainer from "./components/default/utilTask/UtilTaskContainer";
+import ScreenTaskContainer from "./components/default/screenTask/ScreenTaskContainer";
 
 function App() {
     return (
         <div className="wrapper">
-            <HeaderContainer />
+            {/*<HeaderContainer />*/}
+            <Redirect from="/" to="/simpleTask" />
             <Route path='/simpleTask/' render={
                 () => <SimpleTaskContainer />
+            }/>
+            <Route path='/screenTask/' render={
+                () => <ScreenTaskContainer />
             }/>
             <Route path='/opera/' render={
                 () => <OperaContainer />
             }/>
-            <Route path='/chrome/' render={
-                () => <ChromeContainer />
-            }/>
+            {/*<Route path='/chrome/' render={*/}
+            {/*    () => <ChromeContainer />*/}
+            {/*}/>*/}
             <Route path='/utilTask/' render={
                 () => <UtilTaskContainer />
             }/>

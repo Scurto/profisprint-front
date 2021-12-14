@@ -4,7 +4,7 @@ import * as axios from "axios";
 import {connect} from "react-redux";
 import {setAuthUserData} from "../../../redux/authReducer";
 import {Link} from "react-router-dom";
-import SimpleTask from "./SimpleTask";
+import ScreenTask from "./ScreenTask";
 import {
     fetchTask,
     getDataByTaskId,
@@ -18,43 +18,34 @@ import {
     updateNewPostTextCreator, updateStrategyCreator, updateVideoStrategyCreator,
     updateVideoTimerCreator
 } from "../../../redux/simpleTaskReducer";
+import {updateTaskIdOpera} from "../../../redux/operaReducer";
+import Opera from "../../opera/Opera";
 import HeaderContainer from "../header/HeaderContainer";
 
-class SimpleTaskContainer extends React.Component {
+class ScreenTaskContainer extends React.Component {
 
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        // axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {withCredentials: true}).then(resp => {
-        //     if(resp.data.resultCode === 0) {
-        //         let {id, login, email} = resp.data.data;
-        //         console.log(id)
-        //         console.log(email)
-        //         console.log(login)
-        //         this.props.setAuthUserData(id, email, login);
-        //     }
-        // })
     }
 
     render() {
-        // return <Header {...this.props}></Header>
         return <div>
             <HeaderContainer />
-            <SimpleTask {...this.props}></SimpleTask>
+            <ScreenTask {...this.props}></ScreenTask>
         </div>
-
-
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        simpleTaskPage: state.simpleTaskPage
+        screenTaskPage: state.screenTaskPage,
+        operaPage: state.operaPage
     }
 }
 
 export default connect(mapStateToProps, {updateNewPostTextCreator, updateCountOfVideoCreator, updateCountOfAdvertiseCreator, updateCountOfAdvertiseMoveCreator,
     updateVideoTimerCreator, updateAdvertiseTimerCreator, updateChannelIdCreator, updateCustomerIdCreator, updateDomainCreator, updateStrategyCreator, updateVideoStrategyCreator,
-    getDataByTaskId, processTask, fetchTask})(SimpleTaskContainer);
+    getDataByTaskId, processTask, fetchTask, updateTaskIdOpera})(ScreenTaskContainer);

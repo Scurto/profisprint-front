@@ -4,13 +4,12 @@ import Opera from "./Opera";
 import * as axios from "axios";
 import {connect} from "react-redux";
 import {setAuthUserData} from "../../redux/authReducer";
+import {updateTaskIdOpera} from "../../redux/operaReducer";
 
 class OperaContainer extends React.Component {
 
     componentDidMount() {
-        // axios.get(`http://localhost:8830/test`).then(resp => {
-        //     console.log(resp.data);
-        // })
+
     }
 
     render() {
@@ -20,7 +19,9 @@ class OperaContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        screenTaskPage: state.screenTaskPage,
+        operaPage: state.operaPage
     }
 }
 
-export default connect(mapStateToProps, {setAuthUserData})(OperaContainer);
+export default connect(mapStateToProps, {})(OperaContainer);

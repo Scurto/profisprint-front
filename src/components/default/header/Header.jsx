@@ -10,11 +10,14 @@ const Header = (props) => {
                     <Link to="/simpleTask">SimpleTask</Link>
                 </li>
                 <li>
-                    <Link to="/opera">Opera</Link>
+                    <Link to="/screenTask">ScreenTask</Link>
                 </li>
-                <li>
-                    <Link to="/chrome">Chrome</Link>
-                </li>
+                {/*<li>*/}
+                {/*    <Link to="/opera">Opera</Link>*/}
+                {/*</li>*/}
+                {/*<li>*/}
+                {/*    <Link to="/chrome">Chrome</Link>*/}
+                {/*</li>*/}
                 <li>
                     <Link to="/utilTask">UtilTask</Link>
                 </li>
