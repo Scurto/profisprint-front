@@ -7,6 +7,10 @@ import deleteHistoryPanel from "../../../assets/img/deleteHistoryPanel.PNG";
 import leftPanel from "../../../assets/img/leftPanel.PNG";
 import bottomPanelFull from "../../../assets/img/bottomPanelFull.PNG";
 import youtube_favicon from "../../../assets/img/favicon/youtube_favicon.png";
+import ResultPanelTitleContainer from "./resultPanelTitle/ResultPanelTitleContainer";
+import RightPanelHeaderContainer from "./rightPanelHeader/ResultPanelTitleContainer";
+import LeftPanelContainer from "./leftPanel/LeftPanelContainer";
+import HeaderTabPanelContainer from "./headerTabPanel/HeaderTabPanelContainer";
 
 
 function getFavicon() {
@@ -23,9 +27,10 @@ const OperaMainPanel = () => {
 
 
     return (<div className={css.operaMainPanel}>
-            <div className={css.topPanel}>
-                <img className={css.imgWidth} src={topPanel}/>
-            </div>
+            {/*<div className={css.topPanel}>*/}
+            {/*    <img className={css.imgWidth} src={topPanel}/>*/}
+            {/*</div>*/}
+            <HeaderTabPanelContainer></HeaderTabPanelContainer>
             <div className={css.urlPannel}>
                 <img className={css.imgWidth} src={urlPannel}/>
             </div>
@@ -33,37 +38,11 @@ const OperaMainPanel = () => {
                 <img className={css.imgWidth} src={deleteHistoryPanel}/>
             </div>
             <div className={css.middlePanel}>
-                <div className={css.leftPanelStyle}>
-                    <ul>
-                        <li className={css.selected} tabIndex="1">
-                            <div className={css.label}>Сегодня</div>
-                        </li>
-                        <li className={css.disabled}>
-                            <div className={css.label}>Вчера</div>
-                        </li>
-                        <li className={css.disabled}>
-                            <div className={css.label}>Старые</div>
-                        </li>
-                    </ul>
-                </div>
+                <LeftPanelContainer></LeftPanelContainer>
                 <div className={css.rightPanelStyle}>
-                    <h1 className={css.filtersTitle}>Искать в истории</h1>
-                    <div className={css.filters}>
-                        <div className={css.search1Wrapper}>
-                            <input className={css.search1} type="search" autoComplete="off" incremental="" placeholder="Введите ключевое слово" tabIndex="1"/>
-                        </div>
-                        <div className={css.dateInputWrapper}>
-                            <div className={css.dateInput}>
-                                <span className={css.calendarIcon}></span>
-                                <div className="value">Выбрать даты</div>
-                            </div>
-                        </div>
-                        <div className={css.clearHistoryButtonWrapper}>
-                            <button className={css.clearHistoryButton} disabled="" tabIndex="1">Очистить историю ниже</button>
-                        </div>
-                    </div>
+                    <RightPanelHeaderContainer></RightPanelHeaderContainer>
                     <div className={css.resultPanelWrapper}>
-                        <h2 className={css.resultPanelTitle}>Сегодня - понедельник, 13 декабря 2021 г.</h2>
+                        <ResultPanelTitleContainer></ResultPanelTitleContainer>
                         <div className={css.resultPanel}>
                             <div className={css.visitGroup}>
                                 <a className={css.visitEntry} title="" href="" target="" tabIndex="1">
@@ -84,7 +63,7 @@ const OperaMainPanel = () => {
 
                                     {/*<div style={{background: `url(${favicon})`}}></div>*/}
                                     <span className={css.visitUrl}>www.youtube.com</span>
-                                    <span className={css.visitTitle}>ХАЛЯВА КС ГО — ЗАБЕРИ СВОЮ ХАЛЯВУ НА САЙТЕ ggDrop БЕСПЛАТНЫЕ КЕЙСЫ CS GO - YouTube</span>
+                                    <span className={css.visitTitle}>Akela🥺Rhene Ke Aadat_cry_Ise Sad Shayari WhatsApp status 😞 FF||#broken - YouTube</span>
                                 </a>
                             </div>
                             <div className={css.visitGroup}>

@@ -1,0 +1,95 @@
+.filtersTitle {
+    color: #a8abad;
+    font-weight: normal;
+    margin-top: 2rem;
+    font-size: 20px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.filters {
+    align-items: center;
+    display: flex;
+    max-width: 1700px;
+    width: calc(100% - 80px);
+}
+.search1Wrapper:before {
+    background: url(../../../../assets/img/opera/search_icon.svg) no-repeat scroll 7px 7px;
+}
+.search1Wrapper {
+    position: relative;
+    width: 232px;
+    margin-right: 1rem;
+}
+.search1 {
+    background-size: 21px !important;
+    background: url(../../../../assets/img/opera/search_icon.svg) no-repeat scroll 7px 5px;
+    align-items: center;
+    background-color: #171b1f;
+    border-radius: 16px;
+    border: 1px solid #3e4852;
+    box-sizing: border-box;
+    color: #fafafa;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    height: 32px;
+    outline: none;
+    padding: 0 calc(16px + 16px);
+    position: relative;
+    width: 100%;
+}
+.dateInputWrapper {
+    position: relative;
+    width: 210px;
+}
+.dateInput {
+    color: #a8abad;
+    align-items: center;
+    background-color: #171b1f;
+    border-radius: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    border: 1px solid #3e4852;
+    box-sizing: border-box;
+    display: flex;
+    height: 32px;
+    outline: none;
+    padding: 8px 16px;
+    position: relative;
+    width: 100%;
+}
+.calendarIcon {
+    margin-left: -4px;
+    margin-right: 0.5em;
+    background: url(../../../../assets/img/opera/calendar_icon2.svg) no-repeat scroll;
+    background-size: contain;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    -webkit-mask-position: 50%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+}
+.clearHistoryButtonWrapper {
+    margin-left:auto;
+}
+.clearHistoryButton {
+    background-color: #2a343d;
+    border-color: #3e4852;
+    color: #3e4852;
+    cursor: default;
+    border: solid 1px #3e4852;
+    border-radius: 3px;
+    font: menu;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 6px 12px;
+    position: relative;
+    white-space: nowrap;
+    transition: background .12s linear;
+    width: 100%;
+    min-height: 28px;
+}

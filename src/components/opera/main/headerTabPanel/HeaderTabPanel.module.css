@@ -1,0 +1,124 @@
+.tabs {
+    position: relative;
+    /*min-height: 200px; !* This part sucks *!*/
+    clear: both;
+    height: 30px;
+    background-color: #171b1f;
+    /*margin: 25px 0;*/
+}
+.tab {
+    float: left;
+    height: 31px;
+}
+.fakeTab {
+    float: left;
+    height: 31px;
+    width: 174px;
+    /*display: flex;*/
+}
+.historyTab {
+    float: left;
+    height: 31px;
+    width: 174px;
+    background-color: #394551;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.tabRight {
+    float: right;
+    height: 31px;
+}
+.label {
+    position: relative;
+    /*vertical-align: middle;*/
+    color: #ffffffc7;;
+    font-size: 12px;
+    top: 3px;
+    /*background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);*/
+}
+.favicon {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    display: inline-block;
+    top: 6px;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+/*.historyFavicon {*/
+/*    margin-left: 8px;*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    margin-right: 3px;*/
+/*    display: inline-block;*/
+/*    top: 6px;*/
+/*    position: relative;*/
+/*}*/
+
+.historyFavicon {
+    margin-left: 8px;
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    display: inline-block;
+    top: 6px;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.closeFavicon {
+    margin-left: 8px;
+    width: 17px;
+    height: 17px;
+    margin-right: 7px;
+    display: inline-block;
+    top: 7px;
+    position: relative;
+    float: right;
+    background-repeat: no-repeat;
+}
+.delimiter {
+    position: relative;
+    border-right: 1px solid #ffffffc7;
+    height: 17px;
+    float: right;
+    top: 7px;
+}
+
+.tab [type="radio"] {
+    opacity: 0;
+}
+.content {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: white;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.content > * {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+}
+/*[type="radio"]:focus ~ label {*/
+/*    ouline: 2px solid blue;*/
+/*}*/
+/*[type="radio"]:checked ~ label {*/
+/*    background: white;*/
+/*    border-bottom: 1px solid white;*/
+/*    z-index: 2;*/
+/*}*/
+/*[type="radio"]:checked ~ label ~ .content {*/
+/*    z-index: 1;*/
+/*}*/
+/*[type="radio"]:checked ~ label ~ .content > * {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0);*/
+/*}*/
+
