@@ -13,9 +13,7 @@ class Opera extends React.Component {
 
     render() {
         return <div>
-            {/*<h1>Hello, {this.props.operaPage.testText}</h1>*/}
-            <OperaMainPanel></OperaMainPanel>
-            {/*<OperaBottomPanel></OperaBottomPanel>*/}
+            <OperaMainPanel {...this.props}></OperaMainPanel>
         </div>;
     }
 

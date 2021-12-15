@@ -13,7 +13,6 @@ function getFavicon(value) {
         case 'close': return close;
         case 'history': return history;
     }
-
 }
 
 const HeaderTabPanel = (props) => {
@@ -35,20 +34,21 @@ const HeaderTabPanel = (props) => {
             </div>
             <div className={css.fakeTab}>
                 <div className={css.favicon} style={youtubeIcon}></div>
-                <label className={css.label}>YouTube</label>
-                <div className={css.delimiter}></div>
+                {/*<label className={css.label}>YouTube</label>*/}
+                <div className={css.label}>YouTube <div className={css.shadow}></div></div>
                 <div className={css.closeFavicon} style={closeIcon}></div>
+                <div className={css.delimiter}></div>
             </div>
             <div className={css.fakeTab}>
                 <div className={css.favicon} style={youtubeIcon}></div>
                 {/*<label className={css.label}>ПРОВЕРКА 3 НОВЫХ РЕЖИМОВ НА KNIFEX</label>*/}
-                <div className={css.label}>ПРОВЕРКА 3 НОВЫХ РЕЖИМОВ НА KNIFEX</div>
-                {/*<div className={css.delimiter}></div>*/}
+                <div className={css.label}>ПРОВЕРКА 3 НОВЫХ РЕЖИМОВ НА KNIFEX <div className={css.shadow}></div></div>
                 <div className={css.closeFavicon} style={closeIcon}></div>
+                <div className={css.delimiter}></div>
             </div>
             <div className={css.historyTab}>
                 <div className={css.historyFavicon} style={historyIcon}></div>
-                <label className={css.label}>История</label>
+                <div className={css.label}>История</div>
                 <div className={css.closeFavicon} style={closeIcon}></div>
             </div>
             <div className={css.tab}>

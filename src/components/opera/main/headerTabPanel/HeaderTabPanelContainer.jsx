@@ -10,6 +10,7 @@ class HeaderTabPanelContainer extends React.Component {
     }
 
     render() {
+        console.log('HeaderTabPanelContainer', this.props)
         return <HeaderTabPanel {...this.props}></HeaderTabPanel>
     }
 }

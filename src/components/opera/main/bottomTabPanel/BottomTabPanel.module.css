@@ -1,0 +1,22 @@
+.bottomPanelFull {
+    position: relative;
+    bottom: 0;
+    height: 40px;
+    clear: both;
+    display: flex;
+}
+.bottomLeftPanel {
+
+}
+
+.bottomClockPanel {
+    color: white;
+    font-size: 12px;
+    background-color: #1f2122;
+    width: 66px;
+    text-align: center;
+}
+
+.bottomRightPanel {
+    float: right;
+}

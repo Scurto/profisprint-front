@@ -17,11 +17,11 @@
     height: calc(100vh - 172px);
     display: flex;
 }
-.bottomPanelFull {
-    position: relative;
-    bottom: 0;
-    height: 40px;
-}
+/*.bottomPanelFull {*/
+/*    position: relative;*/
+/*    bottom: 0;*/
+/*    height: 40px;*/
+/*}*/
 
 .rightPanelStyle {
     height: 100%;

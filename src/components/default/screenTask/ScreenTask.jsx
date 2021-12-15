@@ -2,6 +2,7 @@ import React from 'react';
 import css from './ScreenTask.module.css';
 import YouTube from "react-youtube";
 import {Link, NavLink} from "react-router-dom";
+import {getDataByTaskId} from "../../../redux/operaReducer";
 
 class ScreenTask extends React.Component {
 
@@ -21,13 +22,7 @@ class ScreenTask extends React.Component {
         this.props.fetchTask(this.props.screenTaskPage);
     };
     processTask = () => {
-        // console.log('processTask', this.props)
-        // this.props.processTask(this.props.screenTaskPage);
-        console.log('processTask', this.props)
-        this.props.updateTaskIdOpera(new Date());
-        console.log('processTask2', this.props)
-
-        // window.open("opera", "_blank")
+        this.props.getDataByTaskId('value')
     };
 
     onTaskIdChange = (e) => {
