@@ -2,7 +2,6 @@ import React from 'react';
 import css from './ScreenTask.module.css';
 import YouTube from "react-youtube";
 import {Link, NavLink} from "react-router-dom";
-import {getDataByTaskId} from "../../../redux/operaReducer";
 
 class ScreenTask extends React.Component {
 
@@ -15,11 +14,11 @@ class ScreenTask extends React.Component {
     }
 
     getDataByTaskId = () => {
-        this.props.getDataByTaskId(this.props.screenTaskPage.taskIdText);
+        this.props.getScreenDataByTaskId(this.props.screenTaskPage.taskIdText);
     };
     fetchTask = () => {
         console.log('fetchTask', this.props);
-        this.props.fetchTask(this.props.screenTaskPage);
+        this.props.fetchScreenTask(this.props.screenTaskPage);
     };
     processTask = () => {
         this.props.getDataByTaskId('value')

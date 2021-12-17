@@ -1,26 +1,12 @@
 import React from "react";
-import Preloader from "../../common/Preloader";
 import * as axios from "axios";
 import {connect} from "react-redux";
-import {setAuthUserData} from "../../../redux/authReducer";
-import {Link} from "react-router-dom";
 import ScreenTask from "./ScreenTask";
-// import {
-//     fetchTask,
-//     getDataByTaskId,
-//     processTask,
-//     updateAdvertiseTimerCreator,
-//     updateChannelIdCreator,
-//     updateCountOfAdvertiseCreator,
-//     updateCountOfAdvertiseMoveCreator,
-//     updateCountOfVideoCreator,
-//     updateCustomerIdCreator, updateDomainCreator,
-//     updateNewPostTextCreator, updateStrategyCreator, updateVideoStrategyCreator,
-//     updateVideoTimerCreator
-// } from "../../../redux/simpleTaskReducer";
-import {getDataByTaskId, updateTaskIdOpera} from "../../../redux/operaReducer";
-import Opera from "../../opera/Opera";
 import HeaderContainer from "../header/HeaderContainer";
+import {
+    updateNewPostTextCreator,
+    getScreenDataByTaskId, fetchScreenTask
+} from "../../../redux/screenTaskReducer";
 
 class ScreenTaskContainer extends React.Component {
 
@@ -46,4 +32,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {updateTaskIdOpera, getDataByTaskId})(ScreenTaskContainer);
+export default connect(mapStateToProps, {getScreenDataByTaskId, fetchScreenTask, updateNewPostTextCreator})(ScreenTaskContainer);

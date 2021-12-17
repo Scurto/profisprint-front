@@ -1,23 +1,18 @@
 import {taskAPI} from "../api/api";
-import {setDataByTaskId} from "./simpleTaskReducer";
 
-const UPDATE_ME= 'UPDATE-ME';
-const UPDATE_TASK= 'UPDATE-TASK';
+const UPDATE_TASK_OPERA= 'UPDATE-TASK-OPERA';
 
 let initState = {
     testText: '',
-    task: null
+    task: {
+        navList: [],
+        resultList:[]
+    }
 }
 
 const operaReducer = (state = initState, action) => {
     switch (action.type) {
-        case UPDATE_ME: {
-            let stateCopy = {...state};
-            stateCopy.testText = action.newValue;
-            console.log('initState',stateCopy)
-            return stateCopy;
-        }
-        case UPDATE_TASK: {
+        case UPDATE_TASK_OPERA: {
             let stateCopy = {...state};
             stateCopy.task = action.newValue;
             return stateCopy;
@@ -27,43 +22,10 @@ const operaReducer = (state = initState, action) => {
     }
 }
 
-export let updateTaskIdOpera = (newTaskId) => {
-    console.log('updateTaskIdOpera')
+export let updateTaskOpera = (task) => {
     return {
-        type: UPDATE_ME,
-        newValue: newTaskId
-    }
-}
-
-export let updateTask = (task) => {
-    return {
-        type: UPDATE_TASK,
+        type: UPDATE_TASK_OPERA,
         newValue: task
-    }
-}
-
-export const getDataByTaskId = (taskId) => {
-
-    return (dispatch) => {
-        let task = {
-            navList: [
-                {
-                    'title': 'title1'
-                }
-            ],
-            resultList: [
-                {
-                    'title': 'title1',
-                    'time': '12:03'
-                }
-            ]
-        }
-
-        dispatch(updateTask(task));
-
-        // taskAPI.getTaskById(taskId).then(resp => {
-        //     dispatch(updateTask(resp.data));
-        // })
     }
 }
 

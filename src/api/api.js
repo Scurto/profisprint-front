@@ -28,8 +28,17 @@ export const taskAPI = {
     getTasksForProcess() {
         return axios.get(baseUrl + "/simpleTaskReady", { params: {} });
     }
+}
 
+export const screenTaskAPI = {
 
+    getTaskById(taskId) {
+        console.log('getTaskById = ' + taskId);
+        return axios.get(baseUrl + "/screen/getDataByTaskId", {params: {taskId: taskId}});
+    },
+    fetchTask(fetchData) {
+        return axios.post(baseUrl + "/screen/fetchTask", fetchData);
+    }
 }
 
 export const authAPI = {
