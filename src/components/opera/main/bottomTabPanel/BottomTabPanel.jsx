@@ -7,10 +7,12 @@ import bottomRightPanel from "../../../../assets/img/opera/bottomBar/bottomRight
 
 const BottomTabPanel = (props) => {
 
-    let date = new Date();
-    let time = (date.getHours()<10?'0':'') + date.getHours() + ':' + (date.getMinutes()<10?'0':'') + date.getMinutes();
-    let localDate = date.getDate() + '.' + (date.getMonth()+1) + '.' + date.getFullYear()
-
+    // let date = new Date();
+    // let time = (date.getHours()<10?'0':'') + date.getHours() + ':' + (date.getMinutes()<10?'0':'') + date.getMinutes();
+    // let localDate = date.getDate() + '.' + (date.getMonth()+1) + '.' + date.getFullYear()
+    let time = props.operaPage.task.date.time;
+    let localDate = props.operaPage.task.date.date;
+    // console.log('BottomTabPanel', props)
     return (
         <div className={css.bottomPanelFull}>
             <img className={css.bottomLeftPanel} src={bottomLeftPanel}/>

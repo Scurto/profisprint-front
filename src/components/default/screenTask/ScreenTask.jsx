@@ -21,7 +21,8 @@ class ScreenTask extends React.Component {
         this.props.fetchScreenTask(this.props.screenTaskPage);
     };
     processTask = () => {
-        this.props.getDataByTaskId('value')
+        console.log('processTask', this.props);
+        this.props.processScreenTask(this.props.screenTaskPage);
     };
 
     onTaskIdChange = (e) => {
@@ -30,23 +31,23 @@ class ScreenTask extends React.Component {
     };
     onCountOfVideoChange = (e) => {
         let text = e.target.value;
-        this.props.updateCountOfVideoCreator(text);
+        this.props.updateScreenCountOfVideoCreator(text);
     };
     onCountOfAdvertiseChange = (e) => {
         let text = e.target.value;
-        this.props.updateCountOfAdvertiseCreator(text);
+        this.props.updateScreenCountOfAdvertiseCreator(text);
     };
     onCountOfAdvertiseMoveChange = (e) => {
         let text = e.target.value;
-        this.props.updateCountOfAdvertiseMoveCreator(text);
+        this.props.updateScreenCountOfAdvertiseMoveCreator(text);
     };
     onVideoTimerChange = (e) => {
         let text = e.target.value;
-        this.props.updateVideoTimerCreator(text);
+        this.props.updateScreenVideoTimerCreator(text);
     };
     onAdvertiseTimerChange = (e) => {
         let text = e.target.value;
-        this.props.updateAdvertiseTimerCreator(text);
+        this.props.updateScreenAdvertiseTimerCreator(text);
     };
     onChannelIdChange = (e) => {
         let text = e.target.value;
@@ -69,6 +70,8 @@ class ScreenTask extends React.Component {
         this.props.updateVideoStrategyCreator(text);
     };
 
+
+
     render() {
         const opts = {
             height: '200',
@@ -81,12 +84,29 @@ class ScreenTask extends React.Component {
         };
 
 
-        return <div>
+
+        let previewList = this.props.screenTaskPage.task.resultList.map((value,index) => {
+            return <div className={css.previewBlock}>
+                <div>{value.time}</div>
+                <div>-</div>
+                <div>{value.title}</div>
+                <div>-</div>
+                <div>{value.text}</div>
+                <div>-</div>
+                <div>{value.type}</div>
+            </div>
+        });
+
+
+        return <div className={css.screenPageDefStyle}>
             <div>
                 <input placeholder="Task Id" value={this.props.screenTaskPage.taskIdText} onChange={this.onTaskIdChange}/>
                 <button onClick={this.getDataByTaskId}>Get data</button>
                 <button onClick={this.fetchTask}>FetchTask</button>
                 <button onClick={this.processTask}>ProcessTask</button>
+                <Link to={'/opera'} className="btn btn-primary">
+                    OPERA
+                </Link>
             </div>
             <p></p>
             <div className={css.fieldBlock}>
@@ -155,10 +175,10 @@ class ScreenTask extends React.Component {
                     </div>
                 </div>
             </div>
+            <div>
+                {previewList}
+            </div>
 
-            <Link to={'/opera'} className="btn btn-primary">
-                TEST
-            </Link>
         </div>
     }
 

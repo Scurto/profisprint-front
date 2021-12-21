@@ -81,10 +81,8 @@ class SimpleTask extends React.Component {
         };
 
 
-        return <div>
+        return <div className={css.simplePageDefStyle}>
             <div>
-                {/*<textarea ref={newPostRef} value={state.newPostText} onChange={onPostChange}></textarea>*/}
-                {/*<input value={state.taskId} onChange={onTaskIdChange}/>*/}
                 <input placeholder="Task Id" value={this.props.simpleTaskPage.taskIdText} onChange={this.onTaskIdChange}/>
                 <button onClick={this.getDataByTaskId}>Get data</button>
                 <button onClick={this.fetchTask}>FetchTask</button>

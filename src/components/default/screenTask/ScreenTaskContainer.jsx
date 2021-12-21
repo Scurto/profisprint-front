@@ -5,7 +5,14 @@ import ScreenTask from "./ScreenTask";
 import HeaderContainer from "../header/HeaderContainer";
 import {
     updateNewPostTextCreator,
-    getScreenDataByTaskId, fetchScreenTask
+    getScreenDataByTaskId,
+    fetchScreenTask,
+    updateScreenCountOfAdvertiseMoveCreator,
+    updateScreenCountOfVideoCreator,
+    updateScreenCountOfAdvertiseCreator,
+    updateScreenVideoTimerCreator,
+    updateScreenAdvertiseTimerCreator,
+    processScreenTask
 } from "../../../redux/screenTaskReducer";
 
 class ScreenTaskContainer extends React.Component {
@@ -32,4 +39,5 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getScreenDataByTaskId, fetchScreenTask, updateNewPostTextCreator})(ScreenTaskContainer);
+export default connect(mapStateToProps, {getScreenDataByTaskId, fetchScreenTask, processScreenTask, updateNewPostTextCreator,
+    updateScreenCountOfAdvertiseCreator, updateScreenCountOfVideoCreator, updateScreenCountOfAdvertiseMoveCreator, updateScreenVideoTimerCreator, updateScreenAdvertiseTimerCreator})(ScreenTaskContainer);

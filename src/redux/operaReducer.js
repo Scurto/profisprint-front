@@ -3,10 +3,13 @@ import {taskAPI} from "../api/api";
 const UPDATE_TASK_OPERA= 'UPDATE-TASK-OPERA';
 
 let initState = {
-    testText: '',
     task: {
         navList: [],
-        resultList:[]
+        resultList:[],
+        date: {
+            'time': null,
+            'date': null
+        }
     }
 }
 

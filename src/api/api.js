@@ -38,6 +38,9 @@ export const screenTaskAPI = {
     },
     fetchTask(fetchData) {
         return axios.post(baseUrl + "/screen/fetchTask", fetchData);
+    },
+    processTask(processData) {
+        return axios.post(baseUrl + "/screen/processTask", processData);
     }
 }
 

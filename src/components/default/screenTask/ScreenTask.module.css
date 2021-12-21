@@ -1,3 +1,7 @@
+.screenPageDefStyle {
+    background-color: #ffff83;
+}
+
 .resultBlock {
     display: flex;
 }
@@ -21,4 +25,8 @@
 
 .fieldTitle {
     margin: 0;
+}
+
+.previewBlock {
+    display: flex;
 }

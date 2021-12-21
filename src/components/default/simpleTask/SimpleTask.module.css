@@ -1,3 +1,7 @@
+.simplePageDefStyle {
+    background-color: #7cfd7c;
+}
+
 .resultBlock {
     display: flex;
 }
