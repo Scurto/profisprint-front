@@ -9,12 +9,13 @@ import ChromeContainer from "./components/chrome/ChromeContainer";
 import SimpleTaskContainer from "./components/default/simpleTask/SimpleTaskContainer";
 import UtilTaskContainer from "./components/default/utilTask/UtilTaskContainer";
 import ScreenTaskContainer from "./components/default/screenTask/ScreenTaskContainer";
+import UtilScreenTaskContainer from "./components/default/utilScreenTask/UtilScreenTaskContainer";
 
 function App() {
     return (
         <div className="wrapper">
             {/*<HeaderContainer />*/}
-            <Redirect from="/" to="/simpleTask" />
+            {/*<Redirect from="/" to="/simpleTask" />*/}
             <Route path='/simpleTask/' render={
                 () => <SimpleTaskContainer />
             }/>
@@ -29,6 +30,9 @@ function App() {
             {/*}/>*/}
             <Route path='/utilTask/' render={
                 () => <UtilTaskContainer />
+            }/>
+            <Route path='/utilScreenTask/' render={
+                () => <UtilScreenTaskContainer />
             }/>
         </div>
         // <div className="wrapper">

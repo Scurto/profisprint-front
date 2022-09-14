@@ -7,8 +7,9 @@
 }
 
 .resultTextarea {
-    width: 850px;
+    width: 50%;
     height: 600px;
+    resize: none;
 }
 
 .fieldBlock {
@@ -20,7 +21,7 @@
 }
 
 .videoBlock {
-    margin-left: auto;
+    margin: auto;
 }
 
 .fieldTitle {

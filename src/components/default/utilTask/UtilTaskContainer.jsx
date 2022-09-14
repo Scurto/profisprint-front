@@ -4,7 +4,6 @@ import * as axios from "axios";
 import {connect} from "react-redux";
 import {relatedTask, testClickCreator, updateReadyTasksDataCreator} from "../../../redux/utilTaskReducer";
 import {taskAPI} from "../../../api/api";
-import {setDataByTaskId} from "../../../redux/simpleTaskReducer";
 import HeaderContainer from "../header/HeaderContainer";
 
 class UtilTaskContainer extends React.Component {

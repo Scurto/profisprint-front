@@ -11,6 +11,14 @@ const SCREEN_UPDATE_ADVERTISE_TIMER = 'SCREEN-UPDATE-ADVERTISE-TIMER';
 const SCREEN_UPDATE_START_TIME = 'SCREEN-UPDATE-START-TIME';
 const SCREEN_UPDATE_END_TIME = 'SCREEN-UPDATE-END-TIME';
 
+const SCREEN_UPDATE_CHANNEL_ID = 'SCREEN-UPDATE-CHANNEL-ID';
+const SCREEN_UPDATE_CUSTOMER_ID = 'SCREEN-UPDATE-CUSTOMER-ID';
+const SCREEN_UPDATE_STRATEGY = 'SCREEN-UPDATE-STRATEGY';
+const SCREEN_UPDATE_VIDEO_STRATEGY = 'SCREEN-UPDATE-VIDEO-STRATEGY';
+const SCREEN_UPDATE_LAST_USED_VIDEOS = 'SCREEN-UPDATE-LAST-USED-VIDEOS';
+const SCREEN_UPDATE_TASK_STATUS= 'SCREEN-UPDATE-TASK-STATUS';
+const SCREEN_UPDATE_DOMAIN = 'SCREEN-UPDATE-DOMAIN';
+
 const SCREEN_UPDATE_TASK = 'SCREEN-UPDATE-TASK';
 
 const PREFIX = 'https://www.youtube.com/watch?v=';
@@ -33,6 +41,7 @@ let initState = {
     startTime: '',
     endTime: '',
     lastUsedVideos: '',
+    taskStatus: '',
     hideScreenTaskContainer: 'n',
     task: {
         navList: [],
@@ -93,6 +102,42 @@ const screenTaskReducer = (state = initState, action) => {
             stateCopy.endTime = action.newValue;
             return stateCopy;
         }
+        case SCREEN_UPDATE_CHANNEL_ID: {
+            let stateCopy = {...state};
+            stateCopy.channelId = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_CUSTOMER_ID: {
+            let stateCopy = {...state};
+            stateCopy.customerId = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_STRATEGY: {
+            let stateCopy = {...state};
+            stateCopy.strategy = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_VIDEO_STRATEGY: {
+            let stateCopy = {...state};
+            stateCopy.videoStrategy = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_DOMAIN: {
+            let stateCopy = {...state};
+            stateCopy.domain = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_LAST_USED_VIDEOS: {
+            let stateCopy = {...state};
+            stateCopy.lastUsedVideos = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_TASK_STATUS: {
+            let stateCopy = {...state};
+            stateCopy.taskStatus = action.newValue;
+            return stateCopy;
+        }
+
 
         case SCREEN_SET_DATA_BY_TASK_ID: {
             let stateCopy = {...state};
@@ -162,6 +207,54 @@ export let updateScreenAdvertiseTimerCreator = (updateAdvertiseTimer) => {
         newValue: updateAdvertiseTimer
     }
 }
+export let updateScreenChannelIdCreator = (updateChannelId) => {
+    return {
+        type: SCREEN_UPDATE_CHANNEL_ID,
+        newValue: updateChannelId
+    }
+}
+
+export let updateScreenCustomerIdCreator = (updateCustomerId) => {
+    return {
+        type: SCREEN_UPDATE_CUSTOMER_ID,
+        newValue: updateCustomerId
+    }
+}
+
+export let updateScreenDomainCreator = (domain) => {
+    return {
+        type: SCREEN_UPDATE_DOMAIN,
+        newValue: domain
+    }
+}
+
+export let updateScreenStrategyCreator = (strategy) => {
+    return {
+        type: SCREEN_UPDATE_STRATEGY,
+        newValue: strategy
+    }
+}
+
+export let updateScreenVideoStrategyCreator = (videoStrategy) => {
+    return {
+        type: SCREEN_UPDATE_VIDEO_STRATEGY,
+        newValue: videoStrategy
+    }
+}
+
+export let updateScreenLastUsedVideosCreator = (lastUsedVideos) => {
+    return {
+        type: SCREEN_UPDATE_LAST_USED_VIDEOS,
+        newValue: lastUsedVideos
+    }
+}
+
+export let updateScreenTaskStatusCreator = (taskStatus) => {
+    return {
+        type: SCREEN_UPDATE_TASK_STATUS,
+        newValue: taskStatus
+    }
+}
 
 export const getScreenDataByTaskId = (taskId) => {
     return (dispatch) => {
@@ -189,9 +282,11 @@ export const fetchScreenTask = (screenTaskPage) => {
 
         screenTaskAPI.fetchTask(fetchData).then(resp => {
             let task = resp.data;
+            console.log('task', task)
             dispatch(updateTaskOpera(task));
             dispatch(updateTask(task));
-            console.log('task', task)
+            dispatch(updateScreenLastUsedVideosCreator(task.lastUsedVideos))
+
         })
     }
 }
@@ -207,8 +302,10 @@ async function processScreenTaskFunction(dispatch, screenTaskPage) {
     let task = screenTaskPage.task;
     let videoTimer = screenTaskPage.videoTimer * 1000;
     let advertiseTimer = screenTaskPage.advertiseTimer * 1000;
-    let fixedTimer = 30 * 1000;
-    let forFinishTimer = 60 * 1000;
+    // let fixedTimer = 30 * 1000;
+    // let forFinishTimer = 60 * 1000;
+    let fixedTimer = 1 * 1000;
+    let forFinishTimer = 1 * 1000;
 
     dispatch(updateStartTimeCreator(getFormattedDate(new Date())));
     let timerForTask= 0
@@ -247,6 +344,7 @@ async function processScreenTaskFunction(dispatch, screenTaskPage) {
     console.log('processData', processData)
     screenTaskAPI.processTask(processData).then(resp => {
         // dispatch(addToFinalResultTextareaCreator('\n' + '-----DONE-----'));
+        dispatch(updateScreenTaskStatusCreator('-----DONE-----'));
         new Audio(audioFile).play();
     })
 

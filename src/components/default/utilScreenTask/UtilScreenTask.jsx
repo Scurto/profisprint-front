@@ -1,8 +1,8 @@
 import React from 'react';
-import css from './UtilTask.module.css';
+import css from './UtilScreenTask.module.css';
 import ReadyTasksItem from "../readyTask/readyTasksItem/ReadyTasksItem";
 
-class UtilTask extends React.Component {
+class UtilScreenTask extends React.Component {
 
     constructor(props) {
         super(props);
@@ -13,7 +13,7 @@ class UtilTask extends React.Component {
 
         let state = this.props.utilTaskPage;
 
-        let readyTasksList = state.readyTasksData.map(value => {
+        let readyTasksList = state.readyTasksScreenData.map(value => {
             return <ReadyTasksItem taskId={value.taskId}
                                    date={value.date}
                                    channelId={value.channelId}
@@ -56,4 +56,4 @@ class UtilTask extends React.Component {
     }
 }
 
-export default UtilTask;
+export default UtilScreenTask;

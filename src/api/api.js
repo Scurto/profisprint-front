@@ -41,6 +41,9 @@ export const screenTaskAPI = {
     },
     processTask(processData) {
         return axios.post(baseUrl + "/screen/processTask", processData);
+    },
+    getScreenTasksForProcess() {
+        return axios.get(baseUrl + "/screen/screenTaskReady", { params: {} });
     }
 }
 

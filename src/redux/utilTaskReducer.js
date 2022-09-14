@@ -3,9 +3,11 @@ import {addToFinalResultTextareaCreator} from "./simpleTaskReducer";
 
 const TEST_CLICK = 'TEST_CLICK';
 const UPDATE_READY_TASKS_DATA = 'UPDATE_READY_TASKS_DATA';
+const SCREEN_UPDATE_READY_TASKS_DATA = 'SCREEN-UPDATE_READY_TASKS_DATA';
 
 let initState = {
-    readyTasksData: []
+    readyTasksData: [],
+    readyTasksScreenData: []
 }
 
 const utilTaskReducer = (state = initState, action) => {
@@ -18,6 +20,11 @@ const utilTaskReducer = (state = initState, action) => {
         case UPDATE_READY_TASKS_DATA: {
             let stateCopy = {...state};
             stateCopy.readyTasksData = action.newValue;
+            return stateCopy;
+        }
+        case SCREEN_UPDATE_READY_TASKS_DATA: {
+            let stateCopy = {...state};
+            stateCopy.readyTasksScreenData = action.newValue;
             return stateCopy;
         }
         default: return state;
@@ -33,6 +40,13 @@ export let testClickCreator = () => {
 export let updateReadyTasksDataCreator = (readyTasksData) => {
     return {
         type: UPDATE_READY_TASKS_DATA,
+        newValue: readyTasksData
+    }
+}
+
+export let updateReadyTasksScreenDataCreator = (readyTasksData) => {
+    return {
+        type: SCREEN_UPDATE_READY_TASKS_DATA,
         newValue: readyTasksData
     }
 }

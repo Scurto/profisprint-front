@@ -170,15 +170,36 @@ class ScreenTask extends React.Component {
                     <div>
                         <p className={css.fieldTitle}>EndTime: {this.props.screenTaskPage.endTime}</p>
                     </div>
-                    <div onKeyDown={this.onKeyPressed} tabIndex={0}>
+                    <div>
                         <p className={css.fieldTitle}>Last used videos: {this.props.screenTaskPage.lastUsedVideos}</p>
+                    </div>
+                    <div>
+                        <p className={css.fieldTitle}>Task status: {this.props.screenTaskPage.taskStatus}</p>
                     </div>
                 </div>
             </div>
             <div>
-                {previewList}
+                {/*{previewList}*/}
             </div>
+            <div className={css.divTable}>
+                <div className={css.divTableRow}>
+                    <div className={css.divTableCol} align="center">Time</div>
+                    <div className={css.divTableCol} align="center">Title</div>
+                    <div className={css.divTableCol} align="center">Type</div>
+                    <div className={css.divTextTableCol} align="center">Text</div>
 
+                    {/*<div className={css.divTableCol} align="center">Domain URL</div>*/}
+                </div>
+                {this.props.screenTaskPage.task.resultList.map((value,index) => {
+                    return <div className={css.divTableRow}>
+                        <div className={css.divTableCol} align="center">{value.time}</div>
+                        <div className={css.divTableCol} align="center">{value.title}</div>
+                        <div className={css.divTableCol} align="center">{value.type}</div>
+                        <div className={css.divTextTableCol} align="center">{value.text}</div>
+
+                    </div>
+                })}
+            </div>
         </div>
     }
 

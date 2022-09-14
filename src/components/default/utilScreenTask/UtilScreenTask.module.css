@@ -1,0 +1,41 @@
+.chrome {
+    background-color: blue;
+    display: block;
+    grid-area: content;
+}
+
+.overflow {
+    height: 700px;
+    overflow: scroll;
+}
+
+.divTable {
+    display: table;
+    width:98vw;
+    background-color: #eee;
+    border: 1px solid #666666;
+    border-spacing: 5px; /* cellspacing:poor IE support for  this */
+}
+.divTableRow {
+    display: table-row;
+    width: auto;
+    clear: both;
+}
+.divTableCol200 {
+    float: left; /* fix for  buggy browsers */
+    display: table-column;
+    width: 200px;
+    background-color: #ccc;
+}
+.divTableCol {
+    float: left; /* fix for  buggy browsers */
+    display: table-column;
+    width: 300px;
+    background-color: #ccc;
+}
+.divTableUrlCol {
+    float: left; /* fix for  buggy browsers */
+    display: table-column;
+    width: 500px;
+    background-color: #ccc;
+}
